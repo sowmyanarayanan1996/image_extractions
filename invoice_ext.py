@@ -1,10 +1,10 @@
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import streamlit as st
 import os
 from PIL import Image
 import google.generativeai as genai
 
-load_dotenv()
+# load_dotenv()
 
 # genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 GOOG_API_KEY ="AIzaSyAHIrXrwJ1y1uHSJCLN2WfvIEcEyWkih98"
@@ -35,7 +35,7 @@ def input_image(upload_file):
 st.set_page_config(page_title="Invoice extraction")
 
 st.header("Invoice extraction Gemini LLM")
-input= st.text_area("input promppt: ",key="input")
+input= st.text_area("input prompt: ",key="input")
 upload_file = st.file_uploader("Choose an image... ",type=["jpeg","jpg","png","pdf"])
 image=""
 
@@ -46,9 +46,11 @@ if upload_file is not None:
 
 submit = st.button("Submit")
 
-input_prompt = """
-you are an expert in understanding invoices. We will upload a image as invoice and you will have to answer any questions based on the uploaded invoice image.
-"""
+# input_prompt = """
+# you are an expert in understanding invoices. We will upload a image as invoice and you will have to answer any questions based on the uploaded invoice image.
+# """
+
+input_prompt = input
 
 if submit:   
     image_data = input_image(upload_file)
