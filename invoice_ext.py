@@ -36,7 +36,7 @@ st.set_page_config(page_title="Invoice extraction")
 
 st.header("Invoice extraction Gemini LLM")
 input= st.text_area("input prompt: ",key="input")
-upload_file = st.file_uploader("Choose an image... ",type=["jpeg","jpg","png","pdf"])
+upload_file = st.file_uploader("Choose an image... ",type=["jpeg","jpg","png"])
 image=""
 
 if upload_file is not None:
